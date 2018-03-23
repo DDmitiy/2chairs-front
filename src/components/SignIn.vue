@@ -34,20 +34,20 @@
       e1: true,
       name: '',
       password: '',
-      methods: {
-        submit() {
-          if (this.$refs.form.validate()) {
-            axios.post('/api/auth/login', {
-              name: this.name,
-              password: this.password
-            })
-          }
-        },
-        clear() {
-          this.$refs.form.reset()
+    }),
+    methods: {
+      submit() {
+        if (this.$refs.form.validate()) {
+          axios.post('/api/auth/login', {
+            name: this.name,
+            password: this.password
+          })
         }
+      },
+      clear() {
+        this.$refs.form.reset()
       }
-    })
+    }
   }
 </script>
 
