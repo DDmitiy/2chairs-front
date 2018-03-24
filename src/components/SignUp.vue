@@ -62,18 +62,18 @@
     data:() => ({
       e1: true,
       cities: [],
-      companyname: '',
+      company_name: '',
       name: '',
       password: '',
-      companyLabel: '',
+      company_label: '',
     }),
     methods: {
       submit() {
         if (this.$refs.form.validate()) {
           axios.post('/api/register', {
             name: this.name,
-            companyname: this.companyname,
-            companyLabel: this.companyLabel,
+            company_name: this.companyname,
+            company_label: this.companyLabel,
             cities: this.cities,
             password: this.password
           })

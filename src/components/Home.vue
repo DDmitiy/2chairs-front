@@ -23,14 +23,26 @@
           </h2>
         </v-flex>
         <v-flex xs1 offset-xs1>
-          <v-btn
-            class="footer"
-          >
-            Sign In
-          </v-btn>
+          <v-dialog v-model='loginDialog' attach='#app' max-width="400px">
+            <v-btn
+              class="footer"
+              slot="activator"
+            >
+              Sign In
+            </v-btn>
+            <SignIn/>
+          </v-dialog>
         </v-flex>
-        <v-flex xs1>
-
+        <v-flex xs1 ml-5>
+          <v-dialog v-model='registerDialog' attach='#app' max-width="400px">
+            <v-btn
+              class="footer"
+              slot="activator"
+            >
+              Sign Up
+            </v-btn>
+            <SignUp/>
+          </v-dialog>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -38,9 +50,20 @@
 </template>
 
 <script>
-    export default {
-        name: "home"
-    }
+  import SignIn from './SignIn'
+  import SignUp from './SignUp'
+
+  export default {
+    name: "home",
+    components:{
+      SignIn,
+      SignUp
+    },
+    data:() => ({
+      loginDialog: '',
+      registerDialog: ''
+    })
+  }
 </script>
 
 <style scoped>
@@ -51,5 +74,8 @@
   .footer{
     margin-top: 300px;
     margin-bottom: 100px;
+  }
+  .dialog{
+    background-color: white;
   }
 </style>
