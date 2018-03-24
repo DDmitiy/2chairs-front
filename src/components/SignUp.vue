@@ -70,7 +70,7 @@
     methods: {
       submit() {
         if (this.$refs.form.validate()) {
-          axios.post('/api/register', {
+          axios.post('/api/auth/register', {
             name: this.name,
             company_name: this.companyname,
             company_label: this.companyLabel,

@@ -17,17 +17,17 @@
         xs4
         pt-1
         pr-1
-        v-for="cat in categories"
+        v-for="category in categories"
       >
         <v-card>
           <v-card-media
-            :src="cat.url"
+            :src="category.preview_url"
           >
             <v-flex align-center>
               <v-btn
-                @click="dialog= true; currentCategory=cat.title"
+                @click="dialog= true; currentCategory=category.category"
               >
-                {{cat.title}}
+                {{category.category}}
               </v-btn>
             </v-flex>
           </v-card-media>
@@ -54,13 +54,13 @@
     },
     data(){
       return{
-        categories: ['adf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdfsadf', 'fadafsdfasd'],
+        categories: [],
         dialog: false,
         currentCategory: ''
       }
     },
     mounted(){
-      axios.get('/categories', {
+      axios.get('/api/categories', {
         name: name
       }).then((response) => {
         this.categories = response.data.categories
