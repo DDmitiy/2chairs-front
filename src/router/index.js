@@ -8,6 +8,7 @@ import profile from '@/components/Profile'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
