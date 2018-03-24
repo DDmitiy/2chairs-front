@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../http'
 
   export default {
     name: "sign-in",

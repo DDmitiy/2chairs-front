@@ -117,13 +117,4 @@
     background-image: url('/static/bg_2chair.jpg');
     background-size: 100%;
   }
-
-  .footer {
-    margin-top: 300px;
-    margin-bottom: 100px;
-  }
-
-  .dialog {
-    background-color: white;
-  }
 </style>

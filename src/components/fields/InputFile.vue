@@ -97,7 +97,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../../http'
 
   export default {
     name: 'input-file',
@@ -241,7 +241,7 @@
             let formData = new FormData()
             formData.append('file', file, file.name)
             const res = await axios.post(
-              'file',
+              '/api/file',
               formData
             )
             this.items.push({
@@ -283,7 +283,7 @@
         const files = []
         for (let i in ids) {
           const id = ids[i]
-          let response = await this.axios.get(`file/${id}`, {responseType: 'arraybuffer'})
+          let response = await this.axios.get(`/api/file/${id}`, {responseType: 'arraybuffer'})
           let file = new File(
             [response.data],
             String(response.headers['content-disposition']).slice(21),

@@ -44,7 +44,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../http'
   import CategoryEdit from './CategoryEdit'
 
   export default {

@@ -8,12 +8,12 @@
       ></v-text-field>
 
       <v-text-field
-        v-model="companyname"
+        v-model="company_name"
         label="Название организации"
       ></v-text-field>
 
       <input-file
-        v-model="companyLabel"
+        v-model="company_label"
         :extensions="['.png']"
         label="Логотип компании"
       ></input-file>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../http'
   import InputFile from './fields/InputFile'
 
   export default {
@@ -78,8 +78,8 @@
         if (this.$refs.form.validate()) {
           axios.post('/api/auth/register', {
             name: this.name,
-            company_name: this.companyname,
-            company_label: this.companyLabel,
+            company_name: this.company_name,
+            company_label: this.company_label,
             cities: this.cities,
             password: this.password
           })
