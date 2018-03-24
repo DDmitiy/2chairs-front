@@ -1,27 +1,27 @@
 <template>
-    <v-dialog v-model="dialog" attach="app" fullscreen transition="dialog-bottom-transition" :overlay="false">
+  <v-card>
       <v-toolbar dark color="primary">
-        <v-btn icon @click.native="dialog = false" dark>
+        <v-btn icon @click.native="$emit('input', false)" dark>
           <v-icon>close</v-icon>
         </v-btn>
         <v-toolbar-title>Settings</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-          <v-btn dark flat @click.native="dialog = false">Save</v-btn>
+          <v-btn dark flat @click.native="$emit('input', false)">Save</v-btn>
         </v-toolbar-items>
       </v-toolbar>
-    </v-dialog>
+  </v-card>
 </template>
 
 <script>
   export default {
     name: "category-edit",
+    props: [
+      'category'
+    ],
     data(){
       return {
-        dialog: false,
-        notifications: false,
-        sound: true,
-        widgets: false
+
       }
     }
   }

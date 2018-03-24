@@ -25,16 +25,21 @@
           >
             <v-flex align-center>
               <v-btn
-                @click=""
-                slot="activator"
+                @click="dialog= true; currentCategory=cat.title"
               >
+                {{cat.title}}
               </v-btn>
             </v-flex>
           </v-card-media>
         </v-card>
       </v-flex>
     </v-layout>
-    <CategoryEdit/>
+    <v-dialog v-model="dialog" attach="app" fullscreen transition="dialog-bottom-transition" :overlay="false">
+      <CategoryEdit
+        @input="dialog=$event"
+        category="cat.title"
+      />
+    </v-dialog>
   </span>
 </template>
 
@@ -50,14 +55,16 @@
     data(){
       return{
         categories: ['adf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdfsadf', 'fadafsdfasd'],
+        dialog: false,
+        currentCategory: ''
       }
     },
     mounted(){
-      /*axios.get('/categories', {
+      axios.get('/categories', {
         name: name
       }).then((response) => {
         this.categories = response.data.categories
-      })*/
+      })
     },
     computed:{
 
