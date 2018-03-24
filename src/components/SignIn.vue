@@ -38,6 +38,8 @@
           axios.post('/api/auth/login', {
             name: this.name,
             password: this.password
+          }).then(response => {
+            this.$router.push('/profile')
           })
         }
       },
