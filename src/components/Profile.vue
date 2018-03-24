@@ -16,6 +16,7 @@
           xs3
           class="pt-1 pr-1"
           v-for="category in categories"
+          :key="category.name"
         >
           <v-card>
             <v-card-media :src="category.preview_url" height="200"></v-card-media>
