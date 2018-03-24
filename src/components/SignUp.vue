@@ -10,6 +10,11 @@
         v-model="companyname"
         label="Название организации"
       ></v-text-field>
+      <input-file
+        v-model="companyLabel"
+        :extensions="['.png']"
+        label="Логотип компании"
+      ></input-file>
       <v-select
         label="Города, в которых происходит продажа"
         chips
@@ -47,8 +52,12 @@
 
 <script>
   import axios from 'axios'
+  import InputFile from './fields/InputFile'
 
   export default {
+    components: {
+      InputFile
+    },
     name: 'signUp',
     data:() => ({
       e1: true,
@@ -56,6 +65,7 @@
       companyname: '',
       name: '',
       password: '',
+      companyLabel: '',
     }),
     methods: {
       submit() {
@@ -63,6 +73,7 @@
           axios.post('/api/register', {
             name: this.name,
             companyname: this.companyname,
+            companyLabel: this.companyLabel,
             cities: this.cities,
             password: this.password
           })
