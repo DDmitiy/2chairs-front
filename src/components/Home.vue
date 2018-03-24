@@ -5,7 +5,7 @@
         <v-container fill-height id="grid-container">
           <v-layout class="center">
             <v-flex class="text-xs-right" xs3 offset-xs1>
-              <img src="/static/TwoChairsLogo.png" alt="" class="text-xs-right mt-2 mb-5 pb-4">
+              <img src="/static/TwoChairsLogo.png" alt="" class="text-xs-right mt-3 mb-5 pb-4">
               <p class="plain-text transparent mb-5">#bonch #hackathon<br> #spbgti #ar</p>
               <img class="" src="/static/bonch_logo.png" alt="">
               <img class="ml-5" src="/static/spbgti_logo.png" alt="">
