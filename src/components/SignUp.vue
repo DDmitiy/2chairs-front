@@ -1,6 +1,6 @@
 <template>
-  <v-card>
-    <v-form ref="form" lazy-validation>
+  <v-form ref="form" lazy-validation>
+    <v-card>
       <v-card-title>Регистрация</v-card-title>
       <v-text-field
         label="Имя пользователя"
@@ -46,8 +46,8 @@
       >
         Отправить
       </v-btn>
-    </v-form>
-  </v-card>
+    </v-card>
+  </v-form>
 </template>
 
 <script>
@@ -91,5 +91,8 @@
 </script>
 
 <style scoped>
-
+  .card{
+    max-width: 500px;
+    background-color: white;
+  }
 </style>

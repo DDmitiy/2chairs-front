@@ -23,7 +23,7 @@
           </h2>
         </v-flex>
         <v-flex xs1 offset-xs1>
-          <v-dialog v-model='loginDialog' attach='#app' max-width="400px">
+          <v-dialog v-model='loginDialog' attach='#app' max-width="500px">
             <v-btn
               class="footer"
               slot="activator"
@@ -34,7 +34,7 @@
           </v-dialog>
         </v-flex>
         <v-flex xs1 ml-5>
-          <v-dialog v-model='registerDialog' attach='#app' max-width="400px">
+          <v-dialog v-model='registerDialog' attach='#app' max-width="500px">
             <v-btn
               class="footer"
               slot="activator"
