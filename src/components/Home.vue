@@ -22,17 +22,17 @@
                 Всё их оборудование и инструменты были живыми, в той или иной форме
               </p>
               <div class="text-xs-left" style="opacity: 1 !important;">
-                <v-dialog v-model='loginDialog' attach='#app'>
+                <v-dialog v-model='registerDialog' attach='#app'>
                   <v-btn slot="activator" class="primary-btn white pink--text">
-                    Sign In
-                  </v-btn>
-                  <SignIn/>
-                </v-dialog>
-                <v-dialog v-model='registerDialog' attach='#app' max-width="500px">
-                  <v-btn  slot="activator" class="primary-btn transparent white--text">
                     Sign Up
                   </v-btn>
                   <SignUp/>
+                </v-dialog>
+                <v-dialog v-model='loginDialog' attach='#app' max-width="500px">
+                  <v-btn  slot="activator" class="primary-btn transparent white--text">
+                    Sign In
+                  </v-btn>
+                  <SignIn/>
                 </v-dialog>
               </div>
             </v-flex>
