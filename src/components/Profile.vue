@@ -1,7 +1,8 @@
 <template>
   <v-layout>
+    <v-layout row wrap>
 
-
+    </v-layout>
   </v-layout>
 </template>
 
