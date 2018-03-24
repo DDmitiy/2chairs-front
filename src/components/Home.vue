@@ -21,8 +21,8 @@
               <p class="plain-text mb-5 text-xs-left">
                 Всё их оборудование и инструменты были живыми, в той или иной форме
               </p>
-              <div class="text-xs-left" style="opacity: 1 !important;">
-                <v-dialog v-model='registerDialog' attach='#app'>
+              <div class="text-xs-left">
+                <v-dialog v-model='registerDialog' attach='#app' max-width="500px">
                   <v-btn slot="activator" class="primary-btn white pink--text">
                     Sign Up
                   </v-btn>
