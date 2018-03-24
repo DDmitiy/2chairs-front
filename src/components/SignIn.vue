@@ -1,10 +1,7 @@
 <template>
-  <v-form ref="form" lazy-validation>
-    <v-card>
-      <v-card-title
-      >
-        Вход
-      </v-card-title>
+  <v-card class="pa-5">
+    <v-form ref="form" lazy-validation>
+      <p class="title">Вход</p>
       <v-text-field
         v-model="name"
         label="Имя пользователя"
@@ -21,8 +18,8 @@
       >
         Отправить
       </v-btn>
-    </v-card>
-  </v-form>
+    </v-form>
+  </v-card>
 </template>
 
 <script>
@@ -30,7 +27,7 @@
 
   export default {
     name: "sign-in",
-    data:() => ({
+    data: () => ({
       e1: true,
       name: '',
       password: '',

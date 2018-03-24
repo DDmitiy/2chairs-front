@@ -1,20 +1,23 @@
 <template>
-  <v-form ref="form" lazy-validation>
-    <v-card>
-      <v-card-title>Регистрация</v-card-title>
+  <v-card class="pa-5">
+    <v-form ref="form" lazy-validation>
+      <p class="title">Регистрация</p>
       <v-text-field
         label="Имя пользователя"
         v-model="name"
       ></v-text-field>
+
       <v-text-field
         v-model="companyname"
         label="Название организации"
       ></v-text-field>
+
       <input-file
         v-model="companyLabel"
         :extensions="['.png']"
         label="Логотип компании"
       ></input-file>
+
       <v-select
         label="Города, в которых происходит продажа"
         chips
@@ -23,6 +26,7 @@
         v-model="cities"
         append-icon=""
         clearable
+        class="mt-3"
       >
         <template slot="selection" slot-scope="data">
           <v-chip
@@ -34,6 +38,7 @@
           </v-chip>
         </template>
       </v-select>
+
       <v-text-field
         v-model="password"
         min="8"
@@ -41,13 +46,14 @@
         :type="e1 ? 'password' : 'text'"
         label="Пароль"
       ></v-text-field>
+
       <v-btn
         @click="submit"
       >
         Отправить
       </v-btn>
-    </v-card>
-  </v-form>
+    </v-form>
+  </v-card>
 </template>
 
 <script>
