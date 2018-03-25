@@ -71,7 +71,9 @@
     },
     mounted() {
       axios.get('/api/categories', {
-        name: name
+        params: {
+          name: 'a'
+        }
       }).then((response) => {
         this.categories = response.data.categories
       })

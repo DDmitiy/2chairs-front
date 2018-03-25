@@ -241,11 +241,11 @@
             let formData = new FormData()
             formData.append('file', file, file.name)
             const res = await axios.post(
-              '/api/file',
+              '/api/files',
               formData
             )
             this.items.push({
-              id: res.data.fileId,
+              id: res.data.id,
               name: file.name,
               type: file.type,
               size: file.size,
@@ -283,7 +283,7 @@
         const files = []
         for (let i in ids) {
           const id = ids[i]
-          let response = await this.axios.get(`/api/file/${id}`, {responseType: 'arraybuffer'})
+          let response = await this.axios.get(`/api/files/${id}`, {responseType: 'arraybuffer'})
           let file = new File(
             [response.data],
             String(response.headers['content-disposition']).slice(21),
