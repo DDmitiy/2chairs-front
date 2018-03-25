@@ -25,7 +25,7 @@
         label="Загрузите 3D модель"
       ></input-file>
       <v-btn
-        @click="submit"
+        @click.native="$emit('input', false)"
       >
         Отправить
       </v-btn>

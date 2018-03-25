@@ -14,7 +14,9 @@
               <v-btn  slot="activator" class="primary-btn">
                 Загрузка модели
               </v-btn>
-              <UploadDialog/>
+              <UploadDialog
+                @input="uploadDialog=$event"
+              />
             </v-dialog>
           </v-layout>
         </v-flex>
@@ -23,13 +25,13 @@
     <v-container id="grid-container">
       <v-layout row wrap>
         <v-flex
-          xs3
+          xs4
           class="pt-1 pr-1"
           v-for="category in categories"
           :key="category.name"
         >
           <v-card>
-            <v-card-media :src="category.preview_url" height="200"></v-card-media>
+            <v-card-media :src="category.preview_url" height="400"></v-card-media>
               <v-card-actions>
                 <v-btn
                   flat
@@ -78,6 +80,26 @@
             'preview_url': 'https://images.ua.prom.st/807534956_w0_h0_to_12_venge.jpg',
             'name': 'Тумбы'
           },
+          {
+            'preview_url': 'http://ikea24.com/image/catalog/product/301.168.48_part_1.jpg',
+            'name': 'Стулья'
+          },
+          {
+            'preview_url': 'https://www.qpstol.ru/global_images/goods/182/14b/167/f24/1012211.jpg',
+            'name': 'Столы'
+          },
+          {
+            'preview_url': 'https://files.meb100.ru/products/b6b3da02d46f8aa706fa268887a6ecfd.jpg',
+            'name': 'Шкафы'
+          },
+          {
+            'preview_url': 'http://photoudom.ru/photo/f6/f6f2987a9c957a186d436667c83e0211.jpg',
+            'name': 'Полки'
+          },
+          {
+            'preview_url': 'http://ekb-mebel.ru/assets/images/products/dvuspalnaya-krovat-s-podemnym-mekhanizmom-naomi-sm-208-01-02-fon-seryy-dzhut.jpg',
+            'name': 'Кровать'
+          }
         ],
         uploadDialog: false,
         dialog: false,
