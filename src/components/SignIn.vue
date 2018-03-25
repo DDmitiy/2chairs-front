@@ -38,6 +38,9 @@
           axios.post('/api/auth/login', {
             name: this.name,
             password: this.password
+          }).then(response => {
+            if (response.status === 200)
+              this.$router.push('/profile')
           })
         }
       },

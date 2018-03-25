@@ -82,6 +82,8 @@
             company_label: this.company_label,
             cities: this.cities,
             password: this.password
+          }).then(response => {
+            this.$router.push('/profile')
           })
         }
       },
