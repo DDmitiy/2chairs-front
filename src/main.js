@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import localStorage from 'vue-localstorage'
 Vue.use(Vuetify)
+Vue.use(localStorage)
 
 Vue.config.productionTip = false
 
@@ -13,6 +15,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  localStorage,
   components: { App },
   template: '<App/>'
 })

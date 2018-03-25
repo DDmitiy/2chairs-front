@@ -6,7 +6,17 @@
           <img height="86px" width="86px" src="http://brandmark.io/logo-rank/random/pepsi.png" alt="">
         </v-flex>
         <v-flex xs9>
-          <h1 class="pt-4 text-xs-left">Company Name</h1>
+          <v-layout row>
+            <h1 class="pt-4 text-xs-left">Company Name</h1>
+          </v-layout>
+          <v-layout>
+            <v-dialog v-model='uploadDialog' attach='#app' max-width="500px">
+              <v-btn  slot="activator" class="primary-btn">
+                Загрузка модели
+              </v-btn>
+              <UploadDialog/>
+            </v-dialog>
+          </v-layout>
         </v-flex>
       </v-layout>
     </v-card>
@@ -38,7 +48,7 @@
     <v-dialog v-model="dialog" attach="app" fullscreen transition="dialog-bottom-transition" :overlay="false">
       <CategoryEdit
         @input="dialog=$event"
-        category="cat.title"
+        :category="currentCategory"
       />
     </v-dialog>
   </span>
@@ -47,11 +57,15 @@
 <script>
   import axios from '../http'
   import CategoryEdit from './CategoryEdit'
+  import UploadDialog from './UploadDialog'
+  import InputFile from './fields/InputFile'
 
   export default {
     name: "profile",
     components: {
-      CategoryEdit
+      CategoryEdit,
+      UploadDialog,
+      InputFile
     },
     data() {
       return {
@@ -65,6 +79,7 @@
             'name': 'Тумбы'
           },
         ],
+        uploadDialog: false,
         dialog: false,
         currentCategory: ''
       }
@@ -85,5 +100,15 @@
 <style scoped>
   #grid-container {
     width: 1110px;
+  }
+  .primary-btn {
+    height: 40px;
+    width: 160px;
+    margin: 0;
+    box-shadow: none;
+    opacity: 1 !important;
+    text-transform: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
   }
 </style>

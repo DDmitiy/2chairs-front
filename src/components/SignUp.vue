@@ -83,6 +83,7 @@
             cities: this.cities,
             password: this.password
           }).then(response => {
+            this.$localStorage.set('token', response.data)
             this.$router.push('/profile')
           })
         }
